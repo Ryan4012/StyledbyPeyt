@@ -56,7 +56,7 @@ body {
     }
       
     .stylist-logo-header img {
-        width: 80px;
+        width: 70px;
         height: auto;
     }
       
@@ -432,7 +432,7 @@ details[open] {
     .tone {
         background-image: url("../images/tone.png");
         background-size: 100% auto;
-        background-position: center -100px;
+        background-position: center -150px;
         background-repeat: no-repeat;
     }
     .foil {
