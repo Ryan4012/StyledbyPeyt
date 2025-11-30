@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="stylesheet" href="CSS/style.css">
+    <link rel="icon" href="images/Website-Logo-Peyton01.png" type="image/png">
+</head>
+<body>
+    <header class="header">
+        <div class="stylist-logo-header">
+            <a href="..."><img src="images/Website-Logo-Peyton01.png" alt="stylist-logo"></a>
+            <h3>Where Style Meets Percision</h3>
+        </div>
+
+        <button class="menu-toggle" aria-label="Toggle navigation">
+            ☰
+        </button>
+
+        <!--Desktop Menu-->
+        <nav class="nav-links">
+            <ul>
+                <li><a href="index.html" class="active"> Home</a></li>
+                <li><a href="services.html"> Services</a></li>
+                <li><a href="policies.html"> Policies</a></li>
+                <li><a href="contact.html"> Contact</a></li>
+                
+            </ul>
+        </nav>
+
+        <!--Mobile Menu-->
+        <nav class="mobile-menu">
+            <ul>
+                <li><a href="index.html" class="active"> Home</a></li>
+                <li><a href="services.html"> Services</a></li>
+                <li><a href="policies.html"> Policies</a></li>
+                <li><a href="contact.html"> Contact</a></li>
+                
+            </ul>
+        </nav>
+
+        <script> //mobile menu drop down
+            const toggleBtn = document.querySelector('.menu-toggle');
+            const mobileMenu = document.querySelector('.mobile-menu');
+          
+            toggleBtn.addEventListener('click', () => {
+              mobileMenu.classList.toggle('open');
+            });
+          </script>
+    </header>
+
+    <div class="page-container">
+    
+        <div class="bio">
+            <h2>About</h2>
+            <p>Hi! I'm Peyton, a cosmetologist and hair lover with a passion for blonding, color, and all things beautiful. I've spent the last few years growing in this industry, perfecting my craft, and learning how to bring out the natural, glam, and elegant style that helps each of my clients feel like the best version of themselves. I'm super friendly and love connecting with the people who sit in my chair. My goal is to create a relaxing, comfortable space where you feel heard, pampered, and truly beautiful in your own skin. Great hair starts with trust—and I'm here for you every step of the way.</p>
+        </div>
+
+
+        <div class="card-container">
+            <a href="https://cal.com/styledbypeyt/haircolor" target="_blank" rel="noopener noreferrer" class="card img1"><span class="label">Hair Color</span></a>
+            <a href="https://cal.com/styledbypeyt/foil" target="_blank" rel="noopener noreferrer" class="card img2"><span class="label">Foil</span></a>
+            <a href="https://cal.com/styledbypeyt/hair-styling" target="_blank" rel="noopener noreferrer" class="card img3"><span class="label">Hair Styling</span></a>
+        </div>
+    </div>
+
+    <br>
+
+    <div style="text-align: center;">
+        <a href="services.html"><button class="service-btn">Veiw All Services</button></a>
+        <a href="https://cal.com/styledbypeyt" target="_blank" rel="noopener noreferrer"><button class="book-btn">Book Now</button></a>
+    </div>
+
+    <br>
+
+    <footer>
+        <div class="grid-container">
+
+            <address class="contact">
+                <h3>Contact:</h3>
+                <p><img src="images/Instagram-logo.png" alt="Instagram"> <a href="https://www.instagram.com/p_n_dhair?igsh=NTc4MTIwNjQ2YQ==" target="_blank" rel="noopener noreferrer"> Instagram</a></p>
+                <p><a href="contact.html">Send a Message</a></p>
+                <div class="stylist-logo-footer">
+                    <a href="..."><img src="images/Website-Logo-Peyton01.png" alt="stylist-logo"></a>
+                </div>
+            </address>
+
+            <div class="hours">
+                <h3>Available Hours:</h3>
+                <p>Monday 8:30 am - 6:00 pm</p>
+                <p>Tuesday Closed </p>
+                <p>Wednesday Closed </p>
+                <p>Thursday 8:30 am - 6:00 pm</p>
+                <p>Friday Closed </p>
+                <p>Saturday Closed </p>
+            </div>
+
+            <div class="location">
+                <h3>Location:</h3>
+                <div class="location-directions">
+                    <p><a href="https://latitudebeautyandboutique.com/pages/latitude-33" target="_blank" rel="noopener noreferrer"> Latitude 33 Hair Artistry</a></p>   
+                    <p>416 S Anaheim Hills Rd, Anaheim, CA 92807</p>
+                    <a href="https://www.google.com/maps/dir/?api=1&destination=416+S+Anaheim+Hills+Rd,+Anaheim,+CA" target="_blank" rel="noopener noreferrer">Directions</a>
+                </div>
+
+            </div>
+
+        </div>
+
+        <br>
+
+        <div class="copyright">
+            <p>© 2025 All rights reserved by Peyton Dyer</p>
+        </div>
+
+    </footer>
+    
+</body>
+</html>
+
+
+
+<!-- Script for the rotating service cards
+
+
+<script>
+        const track = document.getElementById("autoTrack");
+        const cards = track.children;
+        const cardCount = cards.length;
+        
+        // Duplicate cards for infinite loop
+        for (let i = 0; i < cardCount; i++) {
+          let clone = cards[i].cloneNode(true);
+          track.appendChild(clone);
+        }
+        
+        let position = 0;
+        
+        function autoSlide() {
+          const cardWidth = cards[0].offsetWidth + 20; // card width + gap
+        
+          position++;
+        
+          track.style.transform = `translateX(-${position}px)`;
+        
+          // When halfway through the cloned list → reset seamlessly
+          if (position >= cardWidth * cardCount) {
+            track.style.transition = "none"; // no animation on reset
+            position = 0;
+            track.style.transform = `translateX(0px)`;
+        
+            // force browser to apply instantly
+            requestAnimationFrame(() => {
+              track.style.transition = "transform 0.7s linear";
+            });
+          }
+        }
+        
+        setInterval(autoSlide, 50); // smooth continuous motion
+    </script>
+
+
+-->

@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Services</title>
+    <link rel="stylesheet" href="CSS/style.css">
+    <link rel="icon" href="images/Website-Logo-Peyton01.png" type="image/png">
+</head>
+<body>
+    <header class="header">
+        <div class="stylist-logo-header">
+            <a href="..."><img src="images/Website-Logo-Peyton01.png" alt="stylist-logo"></a>
+            <h3>Where Style Meets Percision</h3>
+        </div>
+
+        <button class="menu-toggle" aria-label="Toggle navigation">
+            ☰
+        </button>
+
+        <!--Desktop Menu-->
+        <nav class="nav-links">
+            <ul>
+                <li><a href="index.html"> Home</a></li>
+                <li><a href="services.html" class="active"> Services</a></li>
+                <li><a href="policies.html"> Policies</a></li>
+                <li><a href="contact.html"> Contact</a></li>
+                
+            </ul>
+        </nav>
+
+        <!--Mobile Menu-->
+        <nav class="mobile-menu">
+            <ul>
+                <li><a href="index.html"> Home</a></li>
+                <li><a href="services.html" class="active"> Services</a></li>
+                <li><a href="policies.html"> Policies</a></li>
+                <li><a href="contact.html"> Contact</a></li>
+                
+            </ul>
+        </nav>
+
+        <script> //mobile menu drop down
+            const toggleBtn = document.querySelector('.menu-toggle');
+            const mobileMenu = document.querySelector('.mobile-menu');
+          
+            toggleBtn.addEventListener('click', () => {
+              mobileMenu.classList.toggle('open');
+            });
+        </script>
+    </header>
+
+    <div class="page-container">
+        <section class="services">
+            <h2>Service List</h2>
+            
+            <div class="cards-grid">
+                
+                <details class="haircolor">
+                    <summary><p>Hair Color</p>
+                        <span class="number-right">
+                            <span class="count-badge"></span>
+                        </span>
+                    </summary>
+                    <div class="drop-animation">
+                        <ul>
+                            <li>
+                                <div class="service-option">
+                                    <span class="option-label">Tint</span>
+                                    <div class="select-wrapper"> 
+                                        <select>
+                                            <option value="0">Select Hair Length</option>
+                                            <option value="1">Long (Chest to Waist) - $85</option>
+                                            <option value="2">Medium (Shoulder to Chest) - $80</option>
+                                            <option value="3">Short (Above Shoulders) - $75</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>Hairline Tint — $50</li>
+                            <li>All Over Color — $90</li>
+                            <li>Color Remover — $65</li>
+                        </ul>
+                    </div>
+                </details>
+            
+                <details class="haircut">
+                    <summary><p>Haircut</p>
+                    <span class="number-right">
+                        <span class="count-badge"></span>
+                    </span>
+                    </summary>
+                    <div class="drop-animation">
+                        <ul>
+                            <li>Women — $45</li>
+                            <li>Tweens (Ages 13-17) — $35</li>
+                            <li>Bang Trim/Neck Trim — Complimentary</li>
+                        </ul>
+                    </div>
+                </details>
+
+                <details class="hairstyle">
+                    <summary><p>Hair Styling</p>
+                        <span class="number-right">
+                            <span class="count-badge"></span>
+                        </span>
+                    </summary>
+                    <div class="drop-animation">
+                        <ul>
+                            <li>Finish Blow-Dry (After Color) — $25</li>
+                            <li>Shampoo Blow-Dry (Stand-Alone) — $35</li>
+                            <li>Shampoo Blow-Dry with Flat/Curling Iron — $45</li>
+                            <li>Updo (On Clean, Dry Hair) — $65</li>
+                        </ul>
+                    </div>
+                </details>
+            
+                <details class="tone">
+                    <summary><p>Tone</p>
+                        <span class="number-right">
+                            <span class="count-badge"></span>
+                        </span>
+                    </summary>
+                    <div class="drop-animation">
+                        <ul>
+                            <li>Toner/Gloss — $30</li>
+                            <li>Shadow Root/Root Smudge/Root Melt — $30</li>
+                        </ul>
+                    </div>
+                </details>
+
+                <details class="foil">
+                    <summary><p>Foil</p>
+                        <span class="number-right">
+                            <span class="count-badge"></span>
+                        </span>
+                    </summary>
+                    <div class="drop-animation">
+                        <ul>
+                            <li>Partial Foil — 80+</li>
+                            <li>Full Foil — $110+</li>
+                            <li>Balayage/Foilyage — $200+</li>
+                            <li>Color Bowl Add-On (Per Bowl after 4 Bowls) — Additional $20</li>
+                        </ul>
+                    </div>
+                </details>
+
+                <details class="bridal">
+                    <summary><p>Bridal Services</p>
+                        <span class="number-right">
+                            <span class="count-badge"></span>
+                        </span>
+                    </summary>
+                    <div class="drop-animation">
+                        <ul>
+                            <li>Bridal Party Hair (Trial) — $70</li>
+                            <li>Bride Hair (Trial) — $85</li>
+                            <li>Bridal Party Hair (Wedding Day) — $80</li>
+                            <li>Bride Hair (Wedding Day) — $95</li>
+                        </ul>
+                    </div>
+                </details>
+
+                <details class="consultation">
+                    <summary><p>Consultation</p>
+                        <span class="number-right">
+                            <span class="count-badge"></span>
+                        </span>
+                    </summary>
+                    <div class="drop-animation">
+                        <ul>
+                            <li>Color/Foil Consultation — Complimentary</li>
+                            <li>Bridal Consultation — Complimentary</li>
+                        </ul>
+                    </div>
+                </details>
+
+            </div>
+                
+        </section>
+    </div>
+
+    <script> //counts how many 'li' are in the service drop down 
+        document.querySelectorAll('.services details').forEach(detail => { 
+            const countBadge = detail.querySelector('.count-badge'); 
+            const listItems = detail.querySelectorAll('ul li'); 
+            countBadge.textContent = listItems.length; 
+        });
+    </script>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            document.querySelectorAll(".drop-animation").forEach(content => {
+                // Force layout calculation early
+                const _ = content.scrollHeight;
+            });
+        });
+    </script>
+
+    
+    <script>
+        const detailsList = document.querySelectorAll("details");
+        
+        detailsList.forEach((detail) => {
+            const summary = detail.querySelector("summary");
+            const content = detail.querySelector(".drop-animation");
+            let isManualClick = false;
+        
+            // Detect manual summary click
+            summary.addEventListener("click", () => {
+                isManualClick = true;
+            });
+        
+            // INTERCEPT manual closing
+            summary.addEventListener("click", (e) => {
+                if (detail.open && isManualClick) {
+                    e.preventDefault();
+                    animateClose(detail, content);
+                }
+            });
+        
+            // MAIN TOGGLE HANDLER
+            detail.addEventListener("toggle", () => {
+                // OPENING
+                if (detail.open) {
+        
+                    // Smooth-close any other open details
+                    detailsList.forEach((other) => {
+                        if (other !== detail && other.open) {
+                            smoothAutoClose(other);
+                        }
+                    });
+        
+                    animateOpen(content);
+                }
+        
+                isManualClick = false;
+            });
+        
+            // Animate open
+            function animateOpen(content) {
+                content.style.maxHeight = content.scrollHeight + "px";
+        
+                setTimeout(() => {
+                    content.style.maxHeight = "none"; // natural height
+                }, 400);
+            }
+        
+            // Smooth manual close
+            function animateClose(detail, content) {
+                content.style.maxHeight = content.scrollHeight + "px";
+        
+                requestAnimationFrame(() => {
+                    content.style.maxHeight = "0px";
+                });
+        
+                setTimeout(() => {
+                    detail.open = false;
+                }, 350);
+            }
+        
+            // Smooth closing when switching cards
+            function smoothAutoClose(otherDetail) {
+                const otherContent = otherDetail.querySelector(".drop-animation");
+        
+                // animate collapse
+                otherContent.style.maxHeight = otherContent.scrollHeight + "px";
+        
+                requestAnimationFrame(() => {
+                    otherContent.style.maxHeight = "0px";
+                });
+        
+                // THEN close the actual <details>
+                setTimeout(() => {
+                    otherDetail.open = false;
+                }, 350);
+            }
+        });
+    </script>
+        
+        
+
+    <footer>
+        <div class="grid-container">
+
+            <address class="contact">
+                <h3>Contact:</h3>
+                <p><img src="images/Instagram-logo.png" alt="Instagram"> <a href="https://www.instagram.com/p_n_dhair?igsh=NTc4MTIwNjQ2YQ==" target="_blank" rel="noopener noreferrer"> Instagram</a></p>
+                <p><a href="contact.html">Send a Message</a></p>                
+                <div class="stylist-logo-footer">
+                    <a href="..."><img src="images/Website-Logo-Peyton01.png" alt="stylist-logo"></a>
+                </div>
+            </address>
+
+            <div class="hours">
+                <h3>Available Hours:</h3>
+                <p>Monday 8:30 am - 6:00 pm</p>
+                <p>Tuesday Closed </p>
+                <p>Wednesday Closed </p>
+                <p>Thursday 8:30 am - 6:00 pm</p>
+                <p>Friday Closed </p>
+                <p>Saturday Closed </p>
+                <a href="https://cal.com/styledbypeyt" target="_blank" rel="noopener noreferrer"><button class="book-btn">Book Now!</button></a>
+            </div>
+
+            <div class="location">
+                <h3>Location:</h3>
+                <div class="location-directions">
+                    <p><a href="https://latitudebeautyandboutique.com/pages/latitude-33" target="_blank" rel="noopener noreferrer"> Latitude 33 Hair Artistry</a></p>   
+                    <p>416 S Anaheim Hills Rd, Anaheim, CA 92807</p>
+                    <a href="https://www.google.com/maps/dir/?api=1&destination=416+S+Anaheim+Hills+Rd,+Anaheim,+CA" target="_blank" rel="noopener noreferrer">Directions</a>
+                </div>
+
+            </div>
+
+        </div>
+
+        <br>
+
+        <div class="copyright">
+            <p>© 2025 All rights reserved by Peyton Dyer</p>
+        </div>
+
+    </footer>
+      
+
+</body>
+</html>

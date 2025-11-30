@@ -1,0 +1,737 @@
+
+
+/* Home Page Start */
+body {
+    background-color: linen;
+    margin: 0;
+    padding: 0;
+}
+
+.page-container {
+    max-width: 1600px; /* Rest of the page contents width (Excluding header and footer) */
+    margin: 0 auto;
+    padding: 10px;
+}
+
+
+/* Basic Header Layout */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #ddbea9; /* color */
+    padding: 0.8rem 2rem;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    border-bottom: 3px solid #264E36;
+}
+
+  
+/* Logo Section */
+.stylist-logo-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+  
+.stylist-logo-header img {
+    width: 150px;
+    height: auto;
+}
+  
+.stylist-logo-header h3 {
+    font-size: 1.4rem;
+    color: #264E36; /* dark green */
+    font-family:cursive;  
+    margin: 0;
+}
+
+@media (max-width: 600px) {
+    .stylist-logo-header {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
+      
+    .stylist-logo-header img {
+        width: 100px;
+        height: auto;
+    }
+      
+    .stylist-logo-header h3 {
+        font-size: 1.0rem;
+        color: #264E36; /* dark green */
+        font-family:cursive;  
+        margin: 0;
+    }
+
+}
+
+/* Navigation Links */
+.nav-links ul {
+    list-style: none;
+    display: flex;
+    gap: 1.5rem;
+    margin: 0;
+    padding: 0;
+}
+  
+.nav-links a {
+    text-decoration: none;
+    color: #264E36;
+    font-weight: 500;
+    font-family: "Poppins", sans-serif;
+    position: relative;
+    transition: color 0.3s ease;
+} 
+/* Hover underline effect */
+.nav-links a::before {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 2px;
+  left: 50%;
+  bottom: -3px; /* Space between bottom of text and underline */
+  background-color: #264E36; /* underline color */
+  transition: all 0.6s ease;
+}
+.nav-links a:hover::before {
+  left: 0;
+  width: 100%;
+}
+.nav-links a.active {
+    font-weight: bold;
+}
+
+
+/* Hamburger (hidden on desktop) */
+.menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    color: #264E36;
+    font-size: 2rem;
+    cursor: pointer;
+}
+  
+/* Mobile Dropdown Menu */
+.mobile-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: #264E36;
+    overflow: hidden;
+    max-height: 0;
+    transition: max-height 0.4s ease-out;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+    z-index: 999;
+}
+.mobile-menu.open {
+    max-height: 300px; /* enough to fit all links */
+    transition: max-height 0.4s ease-in;
+}
+.mobile-menu ul {
+    list-style: none;
+    margin: 0;
+    padding: 1rem 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+}
+.mobile-menu a {
+    color: honeydew;
+    text-decoration: none;
+    font-weight: 500;
+    font-family: "Poppins", sans-serif;
+    font-size: 1.1rem;
+    transition: color 0.3s;
+}
+.mobile-menu a:hover {
+    color: #ddbea9;
+}
+
+/* ---- Responsive Rules ---- */
+@media (max-width: 600px) {
+    .nav-links {
+      display: none; /* hide desktop nav */
+    }
+  
+    .menu-toggle {
+      display: block; /* show hamburger */
+    }
+  
+    .mobile-menu {
+      display: block; /* enable dropdown for small screens */
+    }
+
+    .mobile-menu a.active {
+        color: #ddbea9;
+    }
+}
+
+.bio {
+    padding: 50px 100px;
+    text-align: center;
+    font-size: large;
+    color: #cb997e;
+}
+
+
+.card-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
+    width: 100%;
+}
+
+.card {
+    flex: 1;
+    height: 250px;
+    background-size: cover;
+    background-position: center;
+    border-radius: 12px;
+    position: relative;
+
+    display: flex;
+    align-items: flex-end;
+    padding-bottom: 20px;
+    text-decoration: none;
+    color: inherit;
+
+    cursor: pointer;
+    border: none;
+    outline: none;
+
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.card:hover {
+    transform: scale(1.03);
+    box-shadow: 0 6px 20px rgba(0,0,0,0.25);
+}
+
+.card .label {
+    background: rgba(0,0,0,0.55);
+    padding: 10px 20px;
+    border-radius: 8px;
+    color: honeydew;
+    margin: 0 auto;
+    border: none;
+}
+
+
+.img1 {
+    background-image: url("../images/foil.png");
+}
+.img2 {
+    background-image: url("../images/haircolor.png");
+}
+.img3 {
+    background-image: url("../images/hairstyle.png");
+}
+
+
+  
+@media(max-width: 600px) {
+    .auto-card {
+      min-width: 80%;
+    }
+}
+
+.service-btn {
+    background-color: #264E36;
+    color: honeydew;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1rem;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    margin: 0 5px; /* Spacing to the right */
+}
+.service-btn:hover {
+    background-color: #6a8b77; /* slightly lighter */
+    transform: scale(1.05);
+}
+  
+  
+/* Home Page End */
+
+
+
+/* Service Page Start */
+.services {
+    margin: 2rem auto;
+    font-family: "Poppins", sans-serif;
+    color: #264E36; /* dark green */
+}
+  
+.services h2 {
+    text-align: center;
+    margin-bottom: 1.5rem;
+}
+
+.cards-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+@media (max-width: 600px) {
+    .cards-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+details {
+    background-color: #f4f1ee; /* cream */
+    min-height: 200px;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    padding: 0.5rem 1rem;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+  
+details[open] {
+    background-color: #264E36; /* green when opened */
+    color: honeydew;
+}
+
+.haircolor {
+    background-image: url("../images/haircolor.png");
+    background-size: 100% auto;
+    background-position: center -100px;
+    background-repeat: no-repeat;
+}
+/* Wrapper so we can attach custom arrow */
+.select-wrapper {
+    position: relative;
+    width: 100%;
+    max-width: 200px;
+}
+
+/* Styled Select */
+.select-wrapper select {
+    width: 100%;
+    padding: 3px 10px 3px 4px;
+    font-size: 11px;
+    border-radius: 12px;
+    border: 2px solid #264E36;
+    background-color: honeydew;
+    color: #264E36;
+    appearance: none;             /* Remove default browser arrow */
+    outline: none;
+    cursor: pointer;
+    transition: 0.2s ease;
+}
+
+/* Custom dropdown arrow */
+.select-wrapper::after {
+    content: "▾";
+    font-size: 12px;
+    color: #264E36;
+    position: absolute;
+    right: 14px;
+    top: 50%;
+    transform: translateY(-50%);
+    pointer-events: none;
+}
+
+/* Use an inner flex row to align label + select */
+.service-option {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    justify-content: flex-start;
+    
+}
+  
+/* Optional: tighten label & select sizing */
+.option-label {
+    flex-shrink: 0;   /* label won't shrink too small */
+    font-weight: 500;
+}
+
+
+.haircut {
+    background-image: url("../images/haircut.png");
+    background-size: 100% auto;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+.hairstyle {
+    background-image: url("../images/hairstyle.png");
+    background-size: 100% auto;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+.tone {
+    background-image: url("../images/tone.png");
+    background-size: 100% auto;
+    background-position: center -300px;
+    background-repeat: no-repeat;
+}
+.foil {
+    background-image: url("../images/foil.png");
+    background-size: 100% auto;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+.bridal {
+    background-image: url("../images/bridal.png");
+    background-size: 110% auto;
+    background-position: center -100px;
+    background-repeat: no-repeat;
+}
+.consultation {
+    background-image: url("../images/consultation.png");
+    background-size: 100% auto;
+    background-position: center -400px;
+    background-repeat: no-repeat;
+}
+
+summary {
+    cursor: pointer;
+    font-weight: 600;
+    list-style: none;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+summary p {
+    background: rgba(0, 0, 0, 0.5); /* black with 50% opacity */
+    color: honeydew;
+    padding: 6px 10px;
+    border-radius: 6px;
+}
+  
+summary::-webkit-details-marker {
+    display: none; /* hides default arrow */
+}
+  
+summary::after {
+    content: "▾";
+    right: 0;
+    transition: transform 0.3s ease;
+    color: honeydew;
+}
+  
+details[open] summary::after {
+    transform: rotate(180deg);
+}
+  
+ul {
+    margin: 0.5rem 0 0 1rem;
+    padding: 0;
+    /*list-style-type: none; /*Changes the bullet points*/
+}
+
+.count-badge {
+    background-color: honeydew;
+    color: #264E36;
+    border-radius: 50%;
+    padding: 0.2rem 0.6rem;
+    font-size: 0.8rem;
+    margin-right: .5rem;
+}
+
+details[open] .count-badge {
+    background-color: honeydew;
+    color: #264E36;
+}
+
+.number-right {
+    margin-left: auto;
+    display: flex;
+    align-items: center;
+}
+
+details > .drop-animation {
+    overflow: hidden;
+    max-height: 0;
+    opacity: 0;
+    transform: translateY(-10px);
+    transition:
+        max-height 0.5s ease,
+        opacity 0.4s ease,
+        transform 0.4s ease;
+    
+    background: rgba(0, 0, 0, 0.5); /* black with 50% opacity */
+    color: honeydew;
+    padding: 6px 10px;
+    border-radius: 6px;
+}
+
+details[open] > .drop-animation {
+    opacity: 1;
+    transform: translateY(0);
+    max-height: 800px; /* big enough for all content */
+}
+
+/* Service Page End */
+
+
+
+/* Policy Page Start */
+
+.policy-page h2 {
+    text-align: center;
+    color: #cb997e;
+}
+
+.policy-page p {
+    text-align: center;
+    color: #cb997e;
+}
+
+/* Policy Page End */
+
+
+/* Contact Page Start */
+.contact-section {
+    max-width: 1100px;
+    margin: 3rem auto;
+    text-align: center;
+    font-family: "Poppins", sans-serif;
+}
+
+.contact-section h2 {
+    font-size: 2rem;
+    color: #264E36;
+    margin-bottom: 1.5rem;
+}
+
+.contact-box {
+    background: #f4f1ee;
+    padding: 2rem;
+    border-radius: 16px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+    max-width: 500px;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+}
+
+.contact-box label {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    font-weight: 600;
+    color: #264E36;
+}
+
+.contact-box input,
+.contact-box textarea {
+    margin-top: 6px;
+    padding: 12px;
+    border: 2px solid #d4cbc3;
+    border-radius: 10px;
+    font-size: 1rem;
+    background: white;
+    font-family: inherit;
+}
+
+.contact-box button {
+    background: #264E36;
+    color: honeydew;
+    padding: 12px;
+    border: none;
+    border-radius: 10px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+.contact-box button:hover {
+    background-color: #6a8b77; /* slightly lighter */
+}
+
+@media (max-width: 600px) {
+    .contact-box {
+        padding: 1.5rem;
+    }
+}
+
+
+.form-popup {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background: #264E36;
+    color: honeydew;
+    padding: 15px 20px;
+    border-radius: 12px;
+    font-size: 1rem;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(20px);
+    transition:
+        opacity 0.3s ease,
+        transform 0.3s ease;
+    z-index: 9999;
+}
+
+.form-popup.error {
+    background: #b22b2b;
+}
+
+.form-popup.show {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+}
+
+
+/* Contact Page End */
+
+
+/* Footer/Contact Page Start */
+footer {
+    background-color: mistyrose;
+    padding: 10px;
+}
+
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+
+.contact {
+    text-align: center;
+}
+
+
+
+.hours {
+    text-align: center;
+} 
+.hours a::before {
+    content: none;
+}
+.book-btn {
+    background-color: rgb(253, 150, 166); /* pink */
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1rem;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    margin: 0 5px; /* Spacing to the left */
+}
+.book-btn:hover {
+    background-color: lightpink; /* slightly lighter pink*/
+    transform: scale(1.05);
+}
+
+ 
+
+.location {
+    text-align: center;
+}
+
+
+footer h3 {
+    color: rgb(253, 150, 166); /* Header color */
+}
+
+footer p img {
+    height: 20px;
+    width: 20px;
+    padding: 0 3px;
+    vertical-align: middle;
+    padding-bottom: 5px;
+}
+
+
+/* Link underline animation */
+footer a {
+    position: relative;
+    display: inline-block;
+    color: black;
+    text-decoration: none;
+}
+
+footer a::before {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 2px;
+    left: 50%;
+    bottom: -3px;
+    background-color: #264E36; /* underline color */
+    transition: all 0.6s ease;
+}
+
+footer a:hover::before {
+    left: 0;
+    width: 100%;
+}
+/* Link underline animation */
+
+
+.stylist-logo-footer img{
+    width: 125px;
+    height: auto;
+}
+.stylist-logo-footer a::before {
+    content: none;
+}
+.stylist-logo-footer a:hover {
+    transform: scale(1.03);
+    box-shadow: 0 6px 20px rgba(0,0,0,0.25);
+}
+
+.copyright {
+    font-size: small;
+    color: rgba(0, 0, 0, 0.4);
+}
+
+
+/* Footer/Contact Page End */
+
+
+
+
+/* Styling for rotating service cards (Maybe use this method for showing images of services done on clients)
+
+
+.auto-carousel {
+    width: 100%;
+    overflow: hidden;
+    padding: 20px 0;
+  }
+  
+.auto-track {
+    display: flex;
+    gap: 20px;
+    transition: transform 0.7s linear;
+}
+  
+.auto-card {
+    min-width: 300px;
+    background: #264E36;
+    padding: 25px;
+    border-radius: 12px;
+    text-align: center;
+    color: honeydew;
+    font-size: 20px;
+    box-shadow: 0 3px 15px rgba(0,0,0,0.12);
+
+}
+
+
+*/

@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact</title>
+    <link rel="stylesheet" href="CSS/style.css">
+    <link rel="icon" href="images/Website-Logo-Peyton01.png" type="image/png">
+</head>
+<body>
+    <header class="header">
+        <div class="stylist-logo-header">
+            <a href="..."><img src="images/Website-Logo-Peyton01.png" alt="stylist-logo"></a>
+            <h3>Where Style Meets Percision</h3>
+        </div>
+
+        <button class="menu-toggle" aria-label="Toggle navigation">
+            ☰
+        </button>
+
+        <!--Desktop Menu-->
+        <nav class="nav-links">
+            <ul>
+                <li><a href="index.html"> Home</a></li>
+                <li><a href="services.html"> Services</a></li>
+                <li><a href="policies.html"> Policies</a></li>
+                <li><a href="contact.html" class="active"> Contact</a></li>
+                
+            </ul>
+        </nav>
+
+        <!--Mobile Menu-->
+        <nav class="mobile-menu">
+            <ul>
+                <li><a href="index.html"> Home</a></li>
+                <li><a href="services.html"> Services</a></li>
+                <li><a href="policies.html"> Policies</a></li>
+                <li><a href="contact.html" class="active"> Contact</a></li>
+                
+            </ul>
+        </nav>
+
+        <script> //mobile menu drop down
+            const toggleBtn = document.querySelector('.menu-toggle');
+            const mobileMenu = document.querySelector('.mobile-menu');
+          
+            toggleBtn.addEventListener('click', () => {
+              mobileMenu.classList.toggle('open');
+            });
+          </script>
+    </header>
+    
+    <br>
+
+    
+    <div class="page-container">
+        <section class="contact-section">
+            <h2>Contact Me</h2>
+        
+            <form class="contact-box" action="https://api.web3forms.com/submit" method="POST" id="styledbypeyt-form">
+        
+                <input type="hidden" name="access_key" value="f15f98cd-dd1d-4d05-8be5-d51ce78f75fd">
+                
+        
+                <input type="checkbox" name="botcheck" class="hidden" style="display: none;"> <!--Bot Check-->
+
+                <label>
+                    Name
+                    <input type="text" name="name" placeholder="Your Name" required>
+                </label>
+        
+                <label>
+                    Email
+                    <input type="email" name="email" placeholder="Your Email" required>
+                </label>
+        
+                <label>
+                    Message
+                    <textarea name="message" placeholder="Your Message" required></textarea>
+                </label>
+
+                <input type="hidden" name="replyTo" value="email"> <!--Reply to sender-->
+
+                <div class="h-captcha" data-captcha="true"></div>
+        
+                <button type="submit">Send Message</button>
+            </form>
+        </section>
+    </div>
+
+    <script src="https://web3forms.com/client/script.js" async defer></script>
+
+    <script> //hCaptcha Check
+        const form = document.getElementById('styledbypeyt-form');
+        
+        form.addEventListener('submit', function(e) {
+        
+            const hCaptcha = form.querySelector('textarea[name=h-captcha-response]').value;
+        
+            if (!hCaptcha) {
+                e.preventDefault();
+                alert("Please fill out captcha field")
+                return
+            }
+        });
+    </script>
+
+    <!-- Success Popup -->
+    <div id="form-success" class="form-popup success">
+        <p>Thank you! Your message has been sent successfully.</p>
+    </div>
+
+    <!-- Error Popup -->
+    <div id="form-error" class="form-popup error">
+        <p>Oops! Something went wrong. Please try again.</p>
+    </div>
+
+
+    <script>
+        document.querySelector(".contact-box").addEventListener("submit", async function(e) {
+            e.preventDefault(); // stop default form submit
+        
+            const form = e.target;
+        
+            const formData = new FormData(form);
+        
+            // Send request manually to Web3Forms
+            let response = await fetch("https://api.web3forms.com/submit", {
+                method: "POST",
+                body: formData
+            });
+        
+            if (response.ok) {
+                showPopup("form-success");
+                form.reset();
+            } else {
+                showPopup("form-error");
+            }
+        });
+        
+        function showPopup(id) {
+            const popup = document.getElementById(id);
+        
+            popup.classList.add("show");
+        
+            setTimeout(() => {
+                popup.classList.remove("show");
+            }, 3500); // stays for 3.5 seconds
+        }
+    </script>
+        
+    
+    <p></p>
+    
+    <br>
+
+    <footer>
+        <div class="grid-container">
+
+            <address class="contact">
+                <h3>Contact:</h3>
+                <p><img src="images/Instagram-logo.png" alt="Instagram"> <a href="https://www.instagram.com/p_n_dhair?igsh=NTc4MTIwNjQ2YQ==" target="_blank" rel="noopener noreferrer"> Instagram</a></p>
+                <p><a href="contact.html">Send a Message</a></p>               
+                <div class="stylist-logo-footer">
+                    <a href="..."><img src="images/Website-Logo-Peyton01.png" alt="stylist-logo"></a>
+                </div>
+            </address>
+
+            <div class="hours">
+                <h3>Available Hours:</h3>
+                <p>Monday 8:30 am - 6:00 pm</p>
+                <p>Tuesday Closed </p>
+                <p>Wednesday Closed </p>
+                <p>Thursday 8:30 am - 6:00 pm</p>
+                <p>Friday Closed </p>
+                <p>Saturday Closed </p>
+                <a href="https://cal.com/styledbypeyt" target="_blank" rel="noopener noreferrer"><button class="book-btn">Book Now!</button></a>
+            </div>
+
+            <div class="location">
+                <h3>Location:</h3>
+                <p><a href="https://latitudebeautyandboutique.com/pages/latitude-33" target="_blank" rel="noopener noreferrer"> Latitude 33 Hair Artistry</a></p>   
+                <p>416 S Anaheim Hills Rd, Anaheim, CA 92807</p>
+                <div class="location-directions">
+                    <a href="https://www.google.com/maps/dir/?api=1&destination=416+S+Anaheim+Hills+Rd,+Anaheim,+CA" target="_blank" rel="noopener noreferrer">Directions</a>
+                </div>
+
+            </div>
+
+        </div>
+
+        <br>
+
+        <div class="copyright">
+            <p>© 2025 All rights reserved by Peyton Dyer</p>
+        </div>
+
+    </footer>
+
+</body>
+</html>
