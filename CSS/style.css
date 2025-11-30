@@ -56,12 +56,12 @@ body {
     }
       
     .stylist-logo-header img {
-        width: 60px;
+        width: 70px;
         height: auto;
     }
       
     .stylist-logo-header h3 {
-        font-size: 0.9rem;
+        font-size: 1.0rem;
         color: #264E36; /* dark green */
         font-family:cursive;  
         margin: 0;
@@ -162,6 +162,8 @@ body {
   
     .menu-toggle {
       display: block; /* show hamburger */
+      position: absolute;
+      right: 10px; /* push to edge */
     }
   
     .mobile-menu {
