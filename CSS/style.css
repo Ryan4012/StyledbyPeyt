@@ -450,7 +450,7 @@ details[open] {
     .consultation {
         background-image: url("../images/consultation.png");
         background-size: 100% auto;
-        background-position: center -100px;
+        background-position: center -200px;
         background-repeat: no-repeat;
     }
 }
