@@ -56,7 +56,7 @@ body {
     }
       
     .stylist-logo-header img {
-        width: 100px;
+        width: 80px;
         height: auto;
     }
       
@@ -180,10 +180,19 @@ body {
     color: #cb997e;
 }
 
+@media (max-width: 600px) {
+    .bio {
+        padding: 5px 10px;
+        text-align: center;
+        font-size: large;
+        color: #cb997e;
+    }
+}
+
 
 .card-container {
-    display: flex;
-    justify-content: space-between;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Desktop: 3 cards side by side */
     gap: 15px;
     width: 100%;
 }
@@ -223,6 +232,18 @@ body {
     border: none;
 }
 
+@media (max-width: 600px) {
+    .card-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .card-container .card:nth-child(3) {
+        grid-column: 1 / span 2;    /* card spans both columns */
+        width: 60%;                 /* make it centered + smaller */
+        margin: 0 auto;
+    }
+}
+
 
 .img1 {
     background-image: url("../images/foil.png");
@@ -234,13 +255,6 @@ body {
     background-image: url("../images/hairstyle.png");
 }
 
-
-  
-@media(max-width: 600px) {
-    .auto-card {
-      min-width: 80%;
-    }
-}
 
 .service-btn {
     background-color: #264E36;
@@ -394,6 +408,51 @@ details[open] {
     background-size: 100% auto;
     background-position: center -400px;
     background-repeat: no-repeat;
+}
+
+@media (max-width: 600px) {
+    .haircolor {
+        background-image: url("../images/haircolor.png");
+        background-size: 100% auto;
+        background-position: center;
+        background-repeat: no-repeat;
+    }
+    .haircut {
+        background-image: url("../images/haircut.png");
+        background-size: 100% auto;
+        background-position: center;
+        background-repeat: no-repeat;
+    }
+    .hairstyle {
+        background-image: url("../images/hairstyle.png");
+        background-size: 100% auto;
+        background-position: center;
+        background-repeat: no-repeat;
+    }
+    .tone {
+        background-image: url("../images/tone.png");
+        background-size: 100% auto;
+        background-position: center -100px;
+        background-repeat: no-repeat;
+    }
+    .foil {
+        background-image: url("../images/foil.png");
+        background-size: 100% auto;
+        background-position: center;
+        background-repeat: no-repeat;
+    }
+    .bridal {
+        background-image: url("../images/bridal.png");
+        background-size: 110% auto;
+        background-position: center -50px;
+        background-repeat: no-repeat;
+    }
+    .consultation {
+        background-image: url("../images/consultation.png");
+        background-size: 100% auto;
+        background-position: center -100px;
+        background-repeat: no-repeat;
+    }
 }
 
 summary {
@@ -698,6 +757,23 @@ footer a:hover::before {
 .copyright {
     font-size: small;
     color: rgba(0, 0, 0, 0.4);
+}
+
+@media (max-width: 600px) {
+    .grid-container {
+        grid-template-columns: 1fr; /* One column instead of three */
+        text-align: center; /* Optional: keep everything centered */
+        gap: 15px;
+    }
+
+    footer {
+        padding: 20px 10px;
+    }
+
+    .stylist-logo-footer img {
+        width: 80px;
+        height: auto;
+    }
 }
 
 
