@@ -57,11 +57,8 @@
         <section class="contact-section">
             <h2>Contact Me</h2>
         
-            <form class="contact-box" action="https://api.web3forms.com/submit" method="POST" id="styledbypeyt-form">
-        
-                <input type="hidden" name="access_key" value="f15f98cd-dd1d-4d05-8be5-d51ce78f75fd">
-                
-        
+            <form class="contact-box" action="/submit" method="POST" id="styledbypeyt-form" novalidate>
+                        
                 <input type="checkbox" name="botcheck" class="hidden" style="display: none;"> <!--Bot Check-->
 
                 <label>
@@ -79,7 +76,7 @@
                     <textarea name="message" placeholder="Your Message" required></textarea>
                 </label>
 
-                <input type="hidden" name="replyTo" value="email"> <!--Reply to sender-->
+                <input type="hidden" name="replyto" value="email"> <!--Reply to sender-->
 
                 <div class="h-captcha" data-captcha="true"></div>
         
@@ -125,7 +122,7 @@
             const formData = new FormData(form);
         
             // Send request manually to Web3Forms
-            let response = await fetch("https://api.web3forms.com/submit", {
+            let response = await fetch("/submit", {
                 method: "POST",
                 body: formData
             });
@@ -150,7 +147,6 @@
     </script>
         
     
-    <p></p>
     
     <br>
 
