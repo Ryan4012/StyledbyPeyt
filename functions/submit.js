@@ -2,7 +2,7 @@ export async function onRequest(context) {
     try {
       const formData = await context.request.formData();
 
-      formData.append('access_key', context.env.access_key);
+      formData.append('access_key', context.env.WEB3FORMS_ACCESS_KEY);
   
       const response = await fetch('https://api.web3forms.com/submit', {
         method: 'POST',
