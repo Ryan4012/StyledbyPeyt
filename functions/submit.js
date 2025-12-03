@@ -1,6 +1,16 @@
 export async function onRequest(context) {
     try {
-      const formData = await context.request.formData();
+      const originalFormData = await context.request.formData();
+  
+      // Create a new FormData
+      const formData = new FormData();
+  
+      // Copy existing form entries
+      for (const [key, value] of originalFormData.entries()) {
+        formData.append(key, value);
+      }
+  
+      // Append your Web3Forms access key
       formData.append('access_key', context.env.WEB3FORMS_ACCESS_KEY);
   
       const response = await fetch('https://api.web3forms.com/submit', {
@@ -8,11 +18,12 @@ export async function onRequest(context) {
         body: formData
       });
   
-      const text = await response.text();  // get raw text response
+      const text = await response.text();
   
+      // Log for debugging (this appears in your Cloudflare worker logs)
       console.log("Web3Forms response text:", text);
   
-      // Now try to parse JSON only if valid
+      // Try to parse JSON from response
       let result;
       try {
         result = JSON.parse(text);
@@ -31,6 +42,7 @@ export async function onRequest(context) {
         headers: { 'Content-Type': 'application/json' },
         status: response.status,
       });
+  
     } catch (error) {
       return new Response(JSON.stringify({ success: false, error: error.message }), {
         headers: { 'Content-Type': 'application/json' },
