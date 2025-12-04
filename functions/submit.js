@@ -2,19 +2,25 @@ export async function onRequestPost({ request, env }) {
     try {
       const formData = await request.formData();
   
+      // Log all form fields for debugging
+      for (const pair of formData.entries()) {
+        console.log(`${pair[0]}: ${pair[1]}`);
+      }
+  
       const payload = {
         access_key: env.WEB3FORMS_ACCESS_KEY,
-        name: formData.get("name"),
-        email: formData.get("email"),
-        message: formData.get("message"),
-        botcheck: formData.get("botcheck") || ""  // optional
+        name: formData.get("name") || "",
+        email: formData.get("email") || "",
+        message: formData.get("message") || ""
       };
+  
+      console.log("Payload to Web3Forms:", JSON.stringify(payload));
   
       const response = await fetch("https://api.web3forms.com/submit", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
-          "User-Agent": "Mozilla/5.0"  // required to avoid 1106 error
+          "User-Agent": "Mozilla/5.0"
         },
         body: JSON.stringify(payload)
       });
@@ -27,7 +33,7 @@ export async function onRequestPost({ request, env }) {
         result = JSON.parse(text);
       } catch {
         return new Response(
-          JSON.stringify({ success: false, error: "Invalid JSON response", raw: text }),
+          JSON.stringify({ success: false, error: "Invalid JSON from Web3Forms", raw: text }),
           { headers: { "Content-Type": "application/json" }, status: 500 }
         );
       }
@@ -38,6 +44,7 @@ export async function onRequestPost({ request, env }) {
       });
   
     } catch (err) {
+      console.error("Error in Worker:", err);
       return new Response(
         JSON.stringify({ success: false, error: err.message }),
         { headers: { "Content-Type": "application/json" }, status: 500 }
