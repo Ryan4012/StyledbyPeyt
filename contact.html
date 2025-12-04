@@ -77,31 +77,11 @@
                 </label>
 
                 <input type="hidden" name="replyto" value="email"> <!--Reply to sender-->
-
-                <div class="h-captcha" data-captcha="true"></div>
         
                 <button type="submit">Send Message</button>
             </form>
         </section>
     </div>
-
-    <script src="https://web3forms.com/client/script.js" data-no-auto-form="true" async defer></script>
-
-
-    <script> //hCaptcha Check
-        const form = document.getElementById('styledbypeyt-form');
-        
-        form.addEventListener('submit', function(e) {
-        
-            const hCaptcha = form.querySelector('textarea[name=h-captcha-response]').value;
-        
-            if (!hCaptcha) {
-                e.preventDefault();
-                alert("Please fill out captcha field")
-                return
-            }
-        });
-    </script>
 
     <!-- Success Popup -->
     <div id="form-success" class="form-popup success">
