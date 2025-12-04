@@ -1,21 +1,22 @@
 export async function onRequestPost({ request, env }) {
     try {
       const formData = await request.formData();
-      const name = formData.get("name");
-      const email = formData.get("email");
-      const message = formData.get("message");
   
-      const payload = {
-        access_key: env.WEB3FORMS_ACCESS_KEY,
-        name,
-        email,
-        message
-      };
+      // Create a new FormData for the Web3Forms API request
+      const payload = new FormData();
   
+      // Copy all fields from original form
+      for (const [key, value] of formData.entries()) {
+        payload.append(key, value);
+      }
+  
+      // Append your access key
+      payload.append("access_key", env.WEB3FORMS_ACCESS_KEY);
+  
+      // Send the form data as multipart/form-data
       const response = await fetch("https://api.web3forms.com/submit", {
         method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(payload)
+        body: payload
       });
   
       const result = await response.json();
