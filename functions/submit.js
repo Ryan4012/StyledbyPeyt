@@ -1,37 +1,53 @@
 export async function onRequestPost({ request, env }) {
     try {
       const formData = await request.formData();
-      const name = formData.get("name") || "";
-      const email = formData.get("email") || "";
-      const message = formData.get("message") || "";
   
-      const payload = {
-        access_key: env.WEB3FORMS_ACCESS_KEY,
-        name,
-        email,
-        message,
-        replyTo: email,   // optional but recommended
-      };
+      // Create new FormData to forward to Web3Forms
+      const payload = new FormData();
+      for (const [key, value] of formData.entries()) {
+        payload.append(key, value);
+      }
+  
+      // Required
+      payload.append("access_key", env.WEB3FORMS_ACCESS_KEY);
+  
+      // Optional but recommended
+      payload.append("subject", "New contact form submission");
+      payload.append("from_name", formData.get("name") || "");
+      payload.append("replyTo", formData.get("email") || "");
   
       const response = await fetch("https://api.web3forms.com/submit", {
         method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(payload),
+        body: payload
       });
   
-      const result = await response.json();
+      const text = await response.text();
+      console.log("Web3Forms raw response:", text);
   
-      console.log("Web3Forms API response:", result);
+      let result;
+      try {
+        result = JSON.parse(text);
+      } catch (err) {
+        return new Response(JSON.stringify({
+          success: false,
+          error: "Invalid JSON from Web3Forms",
+          raw: text
+        }), { status: 500 });
+      }
   
       return new Response(JSON.stringify(result), {
         headers: { "Content-Type": "application/json" },
-        status: response.status,
+        status: response.status
       });
+  
     } catch (error) {
-      return new Response(
-        JSON.stringify({ success: false, error: error.message }),
-        { headers: { "Content-Type": "application/json" }, status: 500 }
-      );
+      return new Response(JSON.stringify({
+        success: false,
+        error: error.message
+      }), {
+        headers: { "Content-Type": "application/json" },
+        status: 500
+      });
     }
   }
   
