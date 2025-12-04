@@ -5,7 +5,7 @@ export async function onRequestPost({ request, env }) {
       const name = formData.get("name");
       const email = formData.get("email");
       const message = formData.get("message");
-      const botcheck = formData.get("botcheck");
+      const botcheckValue = formData.get("botcheck") || "";
   
       // Log values to see what is actually received
       console.log("Received form data:", { name, email, message, botcheck });
@@ -15,7 +15,7 @@ export async function onRequestPost({ request, env }) {
         name,
         email,
         message,
-        botcheck,
+        botcheck: botcheckValue,
       };
   
       const response = await fetch("https://api.web3forms.com/submit", {
