@@ -75,7 +75,10 @@
                     Message
                     <textarea name="message" placeholder="Your Message" required></textarea>
                 </label>
-        
+
+                <input type="hidden" name="botcheck" value="" />
+                <div class="h-captcha" data-captcha="true"></div>
+
                 <button type="submit">Send Message</button>
             </form>
         </section>
@@ -90,6 +93,8 @@
     <div id="form-error" class="form-popup error">
         <p>Oops! Something went wrong. Please try again.</p>
     </div>
+
+    <script src="https://web3forms.com/client/script.js" async defer></script>
 
 
     <script>
