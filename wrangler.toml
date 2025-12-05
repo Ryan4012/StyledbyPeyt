@@ -1,11 +1,10 @@
-name = "styledbypeyt"    # your project name here
+name = "styledbypeyt"
 
 compatibility_date = "2024-10-10"
 
 compatibility_flags = [
   "nodejs_compat",
-  "nodejs_compat_fetch",
-  "fetch_director_stream"
+  "nodejs_compat_streams"
 ]
 
 pages_build_output_dir = "."
