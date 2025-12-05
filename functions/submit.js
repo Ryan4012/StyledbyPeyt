@@ -1,9 +1,6 @@
 export async function onRequestPost(context) {
     try {
-  
-      // 🔍 DEBUG — Log the environment variable
-      console.log("ENV KEY:", context.env.WEB3FORMS_ACCESS_KEY);
-  
+    
       const formData = await context.request.formData();
   
       const name = formData.get("name");
@@ -24,7 +21,8 @@ export async function onRequestPost(context) {
       });
   
       const result = await response.json();
-  
+      console.log("WEB3FORMS RESULT:", result);
+
       return new Response(JSON.stringify(result), {
         headers: { "Content-Type": "application/json" },
         status: response.status,
