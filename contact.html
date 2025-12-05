@@ -57,7 +57,7 @@
         <section class="contact-section">
             <h2>Contact Me</h2>
         
-            <form class="contact-box" action="/submit" method="POST">
+            <form class="contact-box" action="https://api.web3forms.com/submit" method="POST">
 
                 <input type="hidden" name="access_key" value="e2ee8e21-b19b-46c4-a313-3f5ab3c26f9b">
     
@@ -106,7 +106,7 @@
             const formData = new FormData(form);
         
             // Send request manually to Web3Forms
-            let response = await fetch("/submit", {
+            let response = await fetch("https://api.web3forms.com/submit", {
                 method: "POST",
                 body: formData
             });
