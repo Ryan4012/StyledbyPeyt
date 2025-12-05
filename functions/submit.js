@@ -13,7 +13,9 @@ export async function onRequestPost(context) {
         email,
         message,
       };
-  
+      
+      console.log("ENV KEY:", context.env.WEB3FORMS_ACCESS_KEY);
+
       const response = await fetch("https://api.web3forms.com/submit", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
